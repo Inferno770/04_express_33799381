@@ -6,6 +6,9 @@ const router = express.Router();
 // Handle the routes
 router.get("/", (req, res) => res.send("Hello World!"));
 
+// Import path module
+const path = require("path");  
+
 // the /about route — full HTML page
 router.get('/about', (req, res) => {
   res.send(`
@@ -69,8 +72,6 @@ router.get('/chain',
     res.end("<p>This was created using chained route handlers!</p>");
   }
 );
-
-const path = require("path"); // Import path module at the top of file if not already there
 
 // the /file route — sends an actual HTML file
 router.get('/file', (req, res) => {
